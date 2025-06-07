@@ -51,7 +51,7 @@ const About: React.FC<AboutProps> = (props) => {
         </div>
 
         <p>
-          I’ve worked on 20+ freelance projects through Atrey.dev and completed job simulations with
+          I’ve worked on 20+ freelance projects and completed job simulations with
           top companies like Skyscanner and HP. My projects often focus on real-world use cases like
           cloud storage, social platforms, or AI call agents. You can check them out on my{' '}
           <Link to='/projects/software'>Software Projects</Link> page.
