@@ -1,16 +1,29 @@
 [build]
-  command = "npm run build"
+  command = "npm install --legacy-peer-deps && npm run build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "16.20.2"
-  NPM_VERSION = "8"
-  NPM_FLAGS = "--version"
-  # Disable pnpm
+  NPM_VERSION = "8.19.4"
+  NPM_FLAGS = "--legacy-peer-deps"
+  CI = "false"
   NPM_LOCK = "package-lock.json"
   USE_NPM = "true"
+  NPM_CONFIG_LEGACY_PEER_DEPS = "true"
+
+[build.processing]
+  skip_processing = true
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[dev]
+  command = "npm start"
+  port = 3000
+  publish = "build"
+  targetPort = 3000
