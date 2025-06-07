@@ -42,7 +42,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "preinstall": "npx npm@8.19.4 install -g npm@8.19.4"
   },
   "eslintConfig": {
     "extends": [
@@ -73,5 +74,6 @@
     "eslint": "^8.56.0",
     "@babel/preset-env": "^7.23.2",
     "@babel/core": "^7.23.2"
-  }
+  },
+  "packageManager": "npm@8.19.4"
 }
