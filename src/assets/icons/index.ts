@@ -20,31 +20,31 @@ import scrabbleIcon from './scrabbleIcon.png';
 import close from './close.png';
 
 const icons = {
-    windowResize: windowResize,
-    maximize: maximize,
-    minimize: minimize,
-    computerBig: computerBig,
-    computerSmall: computerSmall,
-    myComputer: myComputer,
-    showcaseIcon: showcaseIcon,
-    doomIcon: doomIcon,
-    volumeOn: volumeOn,
-    volumeOff: volumeOff,
-    credits: credits,
-    scrabbleIcon: scrabbleIcon,
-    henordleIcon: henordleIcon,
-    close: close,
-    windowGameIcon: windowGameIcon,
-    windowExplorerIcon: windowExplorerIcon,
-    windowsStartIcon: windowsStartIcon,
-    trailIcon: trailIcon,
+  windowResize: windowResize,
+  maximize: maximize,
+  minimize: minimize,
+  computerBig: computerBig,
+  computerSmall: computerSmall,
+  myComputer: myComputer,
+  showcaseIcon: showcaseIcon,
+  doomIcon: doomIcon,
+  volumeOn: volumeOn,
+  volumeOff: volumeOff,
+  credits: credits,
+  scrabbleIcon: scrabbleIcon,
+  henordleIcon: henordleIcon,
+  close: close,
+  windowGameIcon: windowGameIcon,
+  windowExplorerIcon: windowExplorerIcon,
+  windowsStartIcon: windowsStartIcon,
+  trailIcon: trailIcon,
 };
 
 export type IconName = keyof typeof icons;
 
 const getIconByName = (
-    iconName: IconName
-    // @ts-ignore
+  iconName: IconName
+  // @ts-ignore
 ): React.FC<React.SVGAttributes<SVGElement>> => icons[iconName];
 
 export default getIconByName;

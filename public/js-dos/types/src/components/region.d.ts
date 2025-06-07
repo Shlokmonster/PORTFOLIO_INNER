@@ -1,6 +1,8 @@
-import { Props } from "../player-app";
+import { Props } from '../player-app';
 interface RegionProps extends Props {
-    class?: string;
+  class?: string;
 }
-export declare function Region(props: RegionProps): import("preact").VNode<any> | import("preact").VNode<any>[];
+export declare function Region(
+  props: RegionProps
+): import('preact').VNode<any> | import('preact').VNode<any>[];
 export {};

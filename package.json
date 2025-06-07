@@ -30,15 +30,17 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
-    "@babel/preset-react": "^7.22.15",
-    "@babel/preset-typescript": "^7.23.3",
     "@babel/plugin-transform-class-properties": "^7.23.3",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.22.5",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-prettier": "^5.4.1",
     "prettier": "^3.2.5"
   },
   "scripts": {
@@ -53,11 +55,43 @@
       "react-app",
       "react-app/jest",
       "plugin:prettier/recommended"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts",
+          "**/*.tsx"
+        ],
+        "parserOptions": {
+          "ecmaVersion": 2020,
+          "sourceType": "module",
+          "ecmaFeatures": {
+            "jsx": true
+          }
+        },
+        "rules": {
+          "no-unused-vars": [
+            "error"
+          ],
+          "no-console": "warn"
+        }
+      }
     ]
   },
   "prettier": {
+    "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "tabWidth": 2,
+    "printWidth": 100,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "quoteProps": "as-needed",
+    "jsxBracketSameLine": false,
+    "bracketSameLine": false,
+    "embeddedLanguageFormatting": "auto"
   },
   "browserslist": {
     "production": [

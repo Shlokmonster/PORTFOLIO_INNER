@@ -20,9 +20,9 @@ interface SocialBoxProps {
 }
 
 const SocialBox: React.FC<SocialBoxProps> = ({ link, icon }) => (
-  <a rel="noreferrer" target="_blank" href={link}>
-    <div className="big-button-container" style={styles.social}>
-      <img src={icon} alt="" style={styles.socialImage} />
+  <a rel='noreferrer' target='_blank' href={link}>
+    <div className='big-button-container' style={styles.social}>
+      <img src={icon} alt='' style={styles.socialImage} />
     </div>
   </a>
 );
@@ -54,21 +54,18 @@ const Contact: React.FC<ContactProps> = () => {
     try {
       setIsLoading(true);
 
-      const res = await fetch(
-        'https://nocodeform.io/f/68448b5c2024fdb9eb4facee',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            company,
-            email,
-            name,
-            message,
-          }),
-        }
-      );
+      const res = await fetch('https://nocodeform.io/f/68448b5c2024fdb9eb4facee', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          company,
+          email,
+          name,
+          message,
+        }),
+      });
 
       if (res.ok) {
         setFormMessage(`Message successfully sent. Thank you ${name}!`);
@@ -101,29 +98,33 @@ const Contact: React.FC<ContactProps> = () => {
   }, [formMessage]);
 
   return (
-    <div className="site-page-content">
+    <div className='site-page-content'>
       <div style={styles.header}>
         <h1>Contact</h1>
         <div style={styles.socials}>
-          <SocialBox icon={ghIcon} link="https://github.com/Shlokmonster" />
-          <SocialBox icon={inIcon} link="https://www.linkedin.com/in/shlok-kadam" />
-          <SocialBox icon={twitterIcon} link="https://x.com/Shlokkadam103?t=fEuQ5jONX1F14CGcUHXtew&s=08" />
+          <SocialBox icon={ghIcon} link='https://github.com/Shlokmonster' />
+          <SocialBox icon={inIcon} link='https://www.linkedin.com/in/shlok-kadam' />
+          <SocialBox
+            icon={twitterIcon}
+            link='https://x.com/Shlokkadam103?t=fEuQ5jONX1F14CGcUHXtew&s=08'
+          />
         </div>
       </div>
 
-      <div className="text-block">
+      <div className='text-block'>
         <p>
-          I'm always open to discussing new opportunities, projects, or just a friendly chat about technology.
-          Feel free to reach out via email or through the contact form below. I'll get back ASAP!
+          I'm always open to discussing new opportunities, projects, or just a friendly chat about
+          technology. Feel free to reach out via email or through the contact form below. I'll get
+          back ASAP!
         </p>
         <br />
         <p>
           <b>Email: </b>
-          <a href="mailto:shlokkadam46@gmail.com">shlokkadam46@gmail.com</a>
+          <a href='mailto:shlokkadam46@gmail.com'>shlokkadam46@gmail.com</a>
         </p>
         <p>
           <b>Phone: </b>
-          <a href="tel:+917823065134">+91 7823065134</a>
+          <a href='tel:+917823065134'>+91 7823065134</a>
         </p>
 
         <form
@@ -142,9 +143,9 @@ const Contact: React.FC<ContactProps> = () => {
           </label>
           <input
             style={styles.formItem}
-            type="text"
-            name="name"
-            placeholder="Name"
+            type='text'
+            name='name'
+            placeholder='Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -157,9 +158,9 @@ const Contact: React.FC<ContactProps> = () => {
           </label>
           <input
             style={styles.formItem}
-            type="email"
-            name="email"
-            placeholder="Email"
+            type='email'
+            name='email'
+            placeholder='Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -171,9 +172,9 @@ const Contact: React.FC<ContactProps> = () => {
           </label>
           <input
             style={styles.formItem}
-            type="text"
-            name="company"
-            placeholder="Company"
+            type='text'
+            name='company'
+            placeholder='Company'
             value={company}
             onChange={(e) => setCompany(e.target.value)}
           />
@@ -185,8 +186,8 @@ const Contact: React.FC<ContactProps> = () => {
             </p>
           </label>
           <textarea
-            name="message"
-            placeholder="Message"
+            name='message'
+            placeholder='Message'
             style={styles.formItem}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -194,12 +195,12 @@ const Contact: React.FC<ContactProps> = () => {
 
           <div style={styles.buttons}>
             <button
-              className="site-button"
+              className='site-button'
               style={styles.button}
-              type="submit"
+              type='submit'
               disabled={!isFormValid || isLoading}
             >
-              {!isLoading ? 'Send Message' : <p className="loading">Sending</p>}
+              {!isLoading ? 'Send Message' : <p className='loading'>Sending</p>}
             </button>
 
             <div style={styles.formInfo}>
@@ -227,7 +228,7 @@ const Contact: React.FC<ContactProps> = () => {
           </div>
         </form>
       </div>
-      <ResumeDownload altText="Need a copy of my Resume?" />
+      <ResumeDownload altText='Need a copy of my Resume?' />
     </div>
   );
 };

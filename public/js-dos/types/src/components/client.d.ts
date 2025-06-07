@@ -1,6 +1,8 @@
-import { Props } from "../player-app";
+import { Props } from '../player-app';
 interface ClientProps extends Props {
-    class?: string;
+  class?: string;
 }
-export declare function Client(props: ClientProps): import("preact").VNode<any> | import("preact").VNode<any>[];
+export declare function Client(
+  props: ClientProps
+): import('preact').VNode<any> | import('preact').VNode<any>[];
 export {};
