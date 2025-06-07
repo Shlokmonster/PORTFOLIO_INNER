@@ -5,11 +5,13 @@
 [build.environment]
   NODE_VERSION = "16.20.2"
   NPM_VERSION = "8.19.4"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NPM_FLAGS = "--legacy-peer-deps --no-fund --no-audit --prefer-offline"
   CI = "false"
-  NPM_LOCK = "package-lock.json"
-  USE_NPM = "true"
   NPM_CONFIG_LEGACY_PEER_DEPS = "true"
+  NPM_CONFIG_PREFER_OFFLINE = "true"
+  NPM_CONFIG_AUDIT = "false"
+  NPM_CONFIG_FUND = "false"
+  NPM_CONFIG_PRODUCTION = "false"
 
 [build.processing]
   skip_processing = true
@@ -18,9 +20,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 [dev]
   command = "npm start"

@@ -29,6 +29,10 @@
     "web-vitals": "^3.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.3",
     "@babel/plugin-transform-class-properties": "^7.23.3",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.22.5",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
@@ -42,9 +46,7 @@
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "react-scripts start",
-    "preinstall": "npx npm@8.19.4 install -g npm@8.19.4",
-    "postinstall": "npm install"
+    "dev": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
